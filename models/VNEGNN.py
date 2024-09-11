@@ -194,7 +194,7 @@ class EGCL_A2V(nn.Module):
     def coord_model_A2V(self, virtual_coord, edge_feat, virtual_coord_diff, data_batch):
         trans = virtual_coord_diff * self.coord_mlp(edge_feat.permute(0, 2, 1)).permute(0, 2, 1)  # [batch_node, 3, C]
         agg = global_mean_pool(trans.reshape(trans.size(0), -1), data_batch).reshape(-1, 3, self.virtual_channels)  # [B, 3, C]
-        virtual_coord += agg
+        virtual_coord = virtual_coord + agg
         return virtual_coord
     
     
@@ -288,7 +288,7 @@ class EGCL_V2A(nn.Module):
     def coord_model_V2A(self, coord, virtual_edge_feat, virtual_coord_diff):
         # virtual_edge_feat: [batch_node, H, C], virtual_coord_diff: [batch_node, 3, C]
         trans_v = torch.mean(-virtual_coord_diff * self.coord_mlp(virtual_edge_feat.permute(0, 2, 1)).permute(0, 2, 1), dim=-1)  # [batch_node, 3]
-        coord += trans_v
+        coord = coord + trans_v
         return coord
 
 
