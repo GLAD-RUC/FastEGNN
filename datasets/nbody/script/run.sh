@@ -1,4 +1,4 @@
-declare -a NumArray=('5' '20' '50')
+declare -a NumArray=('5' '100')
 
 for num in "${NumArray[@]}"
 do

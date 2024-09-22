@@ -94,5 +94,27 @@ if __name__ == "__main__":
     with open(os.path.join(args.path, 'cfg_train' + suffix + '.pkl'), 'wb') as f:
         pkl.dump(cfg_train, f)
 
+    print("Generating {} validation simulations".format(args.num_valid))
+    loc_valid, vel_valid, edges_valid, charges_valid, cfg_valid = generate_dataset(args.num_valid,
+                                                                                      args.length,
+                                                                                      args.sample_freq)
+    np.save(os.path.join(args.path, 'loc_valid' + suffix + '.npy'), loc_valid)
+    np.save(os.path.join(args.path, 'vel_valid' + suffix + '.npy'), vel_valid)
+    np.save(os.path.join(args.path, 'edges_valid' + suffix + '.npy'), edges_valid)
+    np.save(os.path.join(args.path, 'charges_valid' + suffix + '.npy'), charges_valid)
+    with open(os.path.join(args.path, 'cfg_valid' + suffix + '.pkl'), 'wb') as f:
+        pkl.dump(cfg_valid, f)
+
+    print("Generating {} test simulations".format(args.num_test))
+    loc_test, vel_test, edges_test, charges_test, cfg_test = generate_dataset(args.num_test,
+                                                                                 args.length_test,
+                                                                                 args.sample_freq)
+    np.save(os.path.join(args.path, 'loc_test' + suffix + '.npy'), loc_test)
+    np.save(os.path.join(args.path, 'vel_test' + suffix + '.npy'), vel_test)
+    np.save(os.path.join(args.path, 'edges_test' + suffix + '.npy'), edges_test)
+    np.save(os.path.join(args.path, 'charges_test' + suffix + '.npy'), charges_test)
+    with open(os.path.join(args.path, 'cfg_test' + suffix + '.pkl'), 'wb') as f:
+        pkl.dump(cfg_test, f)
+
 
 # python -u generate_dataset.py --num-train 5000 --seed 43 --n_isolated 0 --n_stick 5 --n_hinge 0  --n_workers 50
