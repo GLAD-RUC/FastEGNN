@@ -50,16 +50,6 @@ Train and Evaluate Model:
 bash run_simulation.sh
 ```
 
-**4. QM9 Dataset**
-
-Download this dataset from [link](https://springernature.figshare.com/ndownloader/files/3195389) and place it in your data directory.
-
-Train and Evaluate Model:
-
-```bash
-bash run_simulation.sh
-```
-
 
 ## Equivariant Test
 
