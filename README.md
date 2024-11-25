@@ -1,6 +1,6 @@
 # [ICML24] Improving Equivariant Graph Neural Networks on Large Geometric Graphs via Virtual Nodes Learning
 
-[![ICML24](https://img.shields.io/badge/ICML24-paper-blue)](./assets/FastEGNN.pdf) ![License](https://img.shields.io/github/license/dhcpack/FastEGNN)
+[![ICML24](https://img.shields.io/badge/ICML24-paper-blue)](https://openreview.net/pdf/f95746fcc4839414e50738e10557ebf33e151664.pdf) ![License](https://img.shields.io/github/license/dhcpack/FastEGNN)
 
 ![FastEGNN](./assets/FastEGNN.jpg)
 
