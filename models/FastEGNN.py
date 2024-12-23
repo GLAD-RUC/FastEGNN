@@ -112,10 +112,10 @@ class E_GCL_vel(nn.Module):
         feat_R = feat_R.repeat(1, 1, self.virtual_channels)  # [batch_size, H, C]
 
         out = torch.cat([feat_R, feat_V, radial, mix_V], dim=1)
-        out = self.edge_mlp_virtual(out.permute(0, 2, 1)).permute(0, 2, 1)  # [batch_node, C, H]
+        out = self.edge_mlp_virtual(out.permute(0, 2, 1)).permute(0, 2, 1)  # [batch_node, H, C]
         if self.attention:
-            att_val = self.att_mlp_virtual(out.permute(0, 2, 1)).permute(0, 2, 1)  # [batch_node, C, 1]
-            out = out * att_val  # [batch_node, C, H]
+            att_val = self.att_mlp_virtual(out.permute(0, 2, 1)).permute(0, 2, 1)  # [batch_node, 1, C]
+            out = out * att_val  # [batch_node, H, C]
         return out
 
 
