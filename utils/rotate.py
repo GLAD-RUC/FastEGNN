@@ -44,7 +44,7 @@ def random_rotate():
 def random_rotate_y():
     y = random.randint(0, 360)
     y = np.radians(y)
-    rotate_matrix = rotx(y)
+    rotate_matrix = roty(y)
     rotate_matrix = torch.from_numpy(rotate_matrix)
     return rotate_matrix
 
