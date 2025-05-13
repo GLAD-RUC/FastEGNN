@@ -4,6 +4,8 @@
 
 ![FastEGNN](./assets/FastEGNN.jpg)
 
+[25/05/13] 🚧 This project is currently under reconstruction. Stay tuned for updates!
+
 ## Setup:
 
 ```bash
