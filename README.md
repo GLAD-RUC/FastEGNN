@@ -4,7 +4,12 @@
 
 ![FastEGNN](./assets/FastEGNN.jpg)
 
-[25/05/13] 🚧 This project is currently under reconstruction. Stay tuned for updates!
+🚀 **We have released an extended version of this work:**
+**[Fast and Distributed Equivariant Graph Neural Networks by Virtual Node Learning](https://arxiv.org/abs/2506.19482)**
+
+🔗 [👉 Click here for the new repository with updated code and experiments](https://github.com/GLAD-RUC/DistEGNN)
+
+We appreciate your continued interest and support!
 
 ## Setup:
 
